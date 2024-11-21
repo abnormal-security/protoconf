@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
+	"github.com/protoconf/protoconf/consts"
 	"io"
 	"io/fs"
 	"log/slog"
@@ -122,6 +123,9 @@ func (d *DescriptorRegistry) Import(parse ParserFunc, excludes []*regexp.Regexp,
 				if _, present := d.FileRegistry[f]; present {
 					skip = true
 				}
+			}
+			if !strings.Contains(f, consts.SrcPath) {
+				skip = true
 			}
 			if !skip {
 				files = append(files, strings.TrimPrefix(strings.TrimPrefix(f, path), "/"))

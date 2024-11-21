@@ -24,7 +24,6 @@ import (
 	"github.com/protoconf/protoconf/command"
 	"github.com/protoconf/protoconf/compiler/module/v1"
 	"github.com/protoconf/protoconf/compiler/starproto"
-	"github.com/protoconf/protoconf/consts"
 	"github.com/protoconf/protoconf/utils"
 	"go.starlark.net/starlark"
 	"golang.org/x/mod/sumdb/dirhash"
@@ -364,7 +363,7 @@ func (m *ModuleService) GetProtoRegistry() *utils.DescriptorRegistry {
 		}
 		return nil
 	})
-	err := registry.Import(registry.Parse, []*regexp.Regexp{}, filepath.Join(m.getProtoconfPath(), consts.SrcPath))
+	err := registry.Import(registry.Parse, []*regexp.Regexp{}, m.getProtoconfPath())
 	if err != nil {
 		slog.Error("failed to parse proto files", slog.String("error", err.Error()))
 

@@ -4,7 +4,7 @@ var (
 	Version = "0.0.1"
 )
 
-const (
+var (
 	AgentDefaultAddress      = ":4300"
 	CompiledConfigExtension  = ".materialized_JSON"
 	CompiledConfigPath       = "materialized_config/"
