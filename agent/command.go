@@ -11,8 +11,8 @@ import (
 	"github.com/mitchellh/cli"
 	"google.golang.org/protobuf/proto"
 
+	protoconf_agent_config "github.com/abnormal-security/protoconf/agent/config/v1"
 	configtool "github.com/protoconf/libprotoconf"
-	protoconf_agent_config "github.com/protoconf/protoconf/agent/config/v1"
 )
 
 type cliCommand struct {

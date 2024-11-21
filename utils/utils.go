@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
-	"github.com/protoconf/protoconf/consts"
+	"github.com/abnormal-security/protoconf/consts"
 	"io"
 	"io/fs"
 	"log/slog"
@@ -14,9 +14,9 @@ import (
 	"sort"
 	"strings"
 
+	_ "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	_ "github.com/protoconf/protoconf/pb/protoconf/v1"
 
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/desc/protoparse"

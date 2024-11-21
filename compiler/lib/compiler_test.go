@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"testing"
 
+	_ "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	_ "github.com/protoconf/protoconf/pb/protoconf/v1"
 
-	"github.com/protoconf/protoconf/utils/testdata"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

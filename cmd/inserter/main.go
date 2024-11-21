@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/protoconf/protoconf/command"
-	"github.com/protoconf/protoconf/inserter"
+	"github.com/abnormal-security/protoconf/command"
+	"github.com/abnormal-security/protoconf/inserter"
 )
 
 func main() {

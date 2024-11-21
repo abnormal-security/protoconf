@@ -1,4 +1,4 @@
-module github.com/protoconf/protoconf
+module github.com/abnormal-security/protoconf
 
 go 1.22.4
 

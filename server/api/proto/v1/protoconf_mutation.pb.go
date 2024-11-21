@@ -7,7 +7,7 @@
 package protoconfmutation
 
 import (
-	v1 "github.com/protoconf/protoconf/datatypes/proto/v1"
+	v1 "github.com/abnormal-security/protoconf/datatypes/proto/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

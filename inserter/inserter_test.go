@@ -7,10 +7,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/abnormal-security/protoconf/agent/dummykv"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"github.com/kvtools/valkeyrie/store"
 	"github.com/mitchellh/cli"
-	"github.com/protoconf/protoconf/agent/dummykv"
-	"github.com/protoconf/protoconf/utils/testdata"
 	"github.com/stretchr/testify/assert"
 )
 

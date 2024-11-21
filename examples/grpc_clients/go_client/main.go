@@ -5,9 +5,9 @@ import (
 	"log/slog"
 	"os"
 
-	pc "github.com/protoconf/protoconf/agent/api/proto/v1"
-	"github.com/protoconf/protoconf/consts"
-	pb "github.com/protoconf/protoconf/examples/protoconf/src/crawler"
+	pc "github.com/abnormal-security/protoconf/agent/api/proto/v1"
+	"github.com/abnormal-security/protoconf/consts"
+	pb "github.com/abnormal-security/protoconf/examples/protoconf/src/crawler"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

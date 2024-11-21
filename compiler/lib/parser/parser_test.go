@@ -5,13 +5,13 @@ import (
 	"regexp"
 	"testing"
 
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
 
-	"github.com/protoconf/protoconf/consts"
-	"github.com/protoconf/protoconf/utils"
-	"github.com/protoconf/protoconf/utils/testdata"
+	"github.com/abnormal-security/protoconf/consts"
+	"github.com/abnormal-security/protoconf/utils"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -6,8 +6,8 @@ import (
 	"os"
 	"regexp"
 
+	"github.com/abnormal-security/protoconf/consts"
 	"github.com/mitchellh/cli"
-	"github.com/protoconf/protoconf/consts"
 )
 
 // RunCommand runs a single command

@@ -10,13 +10,13 @@ import (
 	"path/filepath"
 	"sync"
 
+	"github.com/abnormal-security/protoconf/compiler/lib"
+	"github.com/abnormal-security/protoconf/compiler/lib/parser"
+	"github.com/abnormal-security/protoconf/consts"
+	protoconfvalue "github.com/abnormal-security/protoconf/datatypes/proto/v1"
 	"github.com/fsnotify/fsnotify"
 	"github.com/kvtools/valkeyrie"
 	"github.com/kvtools/valkeyrie/store"
-	"github.com/protoconf/protoconf/compiler/lib"
-	"github.com/protoconf/protoconf/compiler/lib/parser"
-	"github.com/protoconf/protoconf/consts"
-	protoconfvalue "github.com/protoconf/protoconf/datatypes/proto/v1"
 	"google.golang.org/protobuf/proto"
 )
 

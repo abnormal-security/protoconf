@@ -15,10 +15,10 @@ import (
 	"runtime/pprof"
 	"strings"
 
+	compilerlib "github.com/abnormal-security/protoconf/compiler/lib"
+	"github.com/abnormal-security/protoconf/consts"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	"github.com/mitchellh/cli"
-	compilerlib "github.com/protoconf/protoconf/compiler/lib"
-	"github.com/protoconf/protoconf/consts"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
 	"go.starlark.net/repl"
 	"go.starlark.net/starlark"
 	"golang.org/x/sync/errgroup"
