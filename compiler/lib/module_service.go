@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"github.com/abnormal-security/protoconf/consts"
 	"io"
 	"log/slog"
 	"net/url"
@@ -363,7 +364,7 @@ func (m *ModuleService) GetProtoRegistry() *utils.DescriptorRegistry {
 		}
 		return nil
 	})
-	err := registry.Import(registry.Parse, []*regexp.Regexp{}, m.getProtoconfPath())
+	err := registry.Import(registry.Parse, []*regexp.Regexp{}, filepath.Join(m.getProtoconfPath(), consts.SrcPath))
 	if err != nil {
 		slog.Error("failed to parse proto files", slog.String("error", err.Error()))
 

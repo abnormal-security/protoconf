@@ -35,6 +35,8 @@ type cliConfig struct {
 	memprofile       string
 	compilerAddress  string
 	src              string
+	includes         string
+	prefix           string
 }
 
 func newFlagSet() (*flag.FlagSet, *cliConfig) {
@@ -53,6 +55,8 @@ func newFlagSet() (*flag.FlagSet, *cliConfig) {
 	flags.StringVar(&config.memprofile, "memprofile", "", "Write memory profiling info to this file")
 	flags.StringVar(&config.compilerAddress, "compiler-address", compilerAddress, "if set, the command will issue a gRPC request to the compiler service at the given address instead of running the compiler locally. The compiler service must be running.")
 	flags.StringVar(&config.src, "src", "src/", "The root of protoconf src.")
+	flags.StringVar(&config.includes, "includes", "", "files to include in the compilation")
+	flags.StringVar(&config.prefix, "prefix", "", "added prefix for proto import path")
 	return flags, config
 }
 
@@ -78,6 +82,12 @@ func (c *cliCommand) Run(args []string) int {
 		defer pprof.StopCPUProfile()
 	}
 	consts.SrcPath = config.src
+	consts.Includes = config.includes
+	consts.Prefix = config.prefix
+
+	println("abnormal added args: src = ", consts.SrcPath)
+	println("abnormal added args: includes = ", consts.Includes)
+	println("abnormal added args: prefix = ", consts.Prefix)
 
 	protoconfRoot := strings.TrimSpace(flags.Args()[0])
 	var configs []string

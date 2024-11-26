@@ -124,7 +124,7 @@ func (d *DescriptorRegistry) Import(parse ParserFunc, excludes []*regexp.Regexp,
 					skip = true
 				}
 			}
-			if !strings.Contains(f, consts.SrcPath) {
+			if !strings.Contains(f, consts.Includes) {
 				skip = true
 			}
 			if !skip {
@@ -141,6 +141,9 @@ func (d *DescriptorRegistry) Import(parse ParserFunc, excludes []*regexp.Regexp,
 		ValidateUnlinkedFiles:           true,
 		InferImportPaths:                true,
 		Accessor: func(filename string) (io.ReadCloser, error) {
+			if consts.Prefix != "" {
+				filename = strings.Replace(filename, consts.Prefix, "", 1)
+			}
 			return os.Open(filename)
 		},
 		LookupImport: func(s string) (*desc.FileDescriptor, error) {
@@ -168,9 +171,10 @@ func (d *DescriptorRegistry) Parse(parser *protoparse.Parser, files []string) er
 	d.localFiles = map[string]struct{}{}
 	descriptors, err := parser.ParseFiles(files...)
 	for _, fd := range descriptors {
+		strippedName := strings.TrimPrefix(fd.GetName(), consts.Prefix)
 		d.MessageRegistry.AddFile("type.googleapis.com", fd)
-		d.FileRegistry[fd.GetName()] = fd
-		d.localFiles[fd.GetName()] = struct{}{}
+		d.FileRegistry[strippedName] = fd
+		d.localFiles[strippedName] = struct{}{}
 	}
 	if err != nil {
 		return errors.Join(errors.New("failed to parse files"), err)
