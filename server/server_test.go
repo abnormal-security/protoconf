@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/protoconf/protoconf/compiler/lib"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
-	"github.com/protoconf/protoconf/utils/testdata"
+	"github.com/abnormal-security/protoconf/compiler/lib"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

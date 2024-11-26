@@ -3,12 +3,12 @@ package parser
 import (
 	"os"
 
+	_ "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	_ "github.com/protoconf/protoconf/pb/protoconf/v1"
 
+	"github.com/abnormal-security/protoconf/utils"
 	"github.com/jhump/protoreflect/desc"
-	"github.com/protoconf/protoconf/utils"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protodesc"

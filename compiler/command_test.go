@@ -5,8 +5,8 @@ import (
 	"net"
 	"testing"
 
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
-	"github.com/protoconf/protoconf/utils/testdata"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"

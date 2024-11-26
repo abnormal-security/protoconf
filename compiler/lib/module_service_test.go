@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/abnormal-security/protoconf/compiler/module/v1"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 	"github.com/hashicorp/go-getter"
-	"github.com/protoconf/protoconf/compiler/module/v1"
-	"github.com/protoconf/protoconf/utils/testdata"
 )
 
 func TestParseModulePath(t *testing.T) {
@@ -123,7 +123,7 @@ func TestModuleService_Sync(t *testing.T) {
 				Url: ".",
 				Deps: map[string]*module.RemoteRepo{
 					"vizceral_repo": {
-						Url:       "github.com/protoconf/protoconf-xds",
+						Url:       "github.com/abnormal-security/protoconf-xds",
 						Pin:       &module.RemoteRepo_Commit{Commit: "27d699b"},
 						Integrity: "h1:MHam+LpdxRMBNGdU+WzfqO6HWpMNfS/6ZHEU+nI1KpI=",
 					},

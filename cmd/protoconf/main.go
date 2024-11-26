@@ -1,19 +1,19 @@
 package main
 
 import (
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
 
+	"github.com/abnormal-security/protoconf/agent"
+	"github.com/abnormal-security/protoconf/command"
+	"github.com/abnormal-security/protoconf/compiler"
+	"github.com/abnormal-security/protoconf/devserver"
+	"github.com/abnormal-security/protoconf/inserter"
+	"github.com/abnormal-security/protoconf/mod"
+	"github.com/abnormal-security/protoconf/mutate"
+	"github.com/abnormal-security/protoconf/server"
 	"github.com/mitchellh/cli"
-	"github.com/protoconf/protoconf/agent"
-	"github.com/protoconf/protoconf/command"
-	"github.com/protoconf/protoconf/compiler"
-	"github.com/protoconf/protoconf/devserver"
-	"github.com/protoconf/protoconf/inserter"
-	"github.com/protoconf/protoconf/mod"
-	"github.com/protoconf/protoconf/mutate"
-	"github.com/protoconf/protoconf/server"
 )
 
 func init() {

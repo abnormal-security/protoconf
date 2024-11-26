@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/abnormal-security/protoconf/compiler/starproto"
 	"github.com/jhump/protoreflect/dynamic"
 	"github.com/jhump/protoreflect/dynamic/msgregistry"
-	"github.com/protoconf/protoconf/compiler/starproto"
 	"go.starlark.net/starlark"
 	"google.golang.org/protobuf/proto"
 	pbproto "google.golang.org/protobuf/proto"

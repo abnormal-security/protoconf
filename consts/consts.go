@@ -4,7 +4,7 @@ var (
 	Version = "0.0.1"
 )
 
-const (
+var (
 	AgentDefaultAddress      = ":4300"
 	CompiledConfigExtension  = ".materialized_JSON"
 	CompiledConfigPath       = "materialized_config/"
@@ -17,6 +17,8 @@ const (
 	ProtoExtension           = ".proto"
 	ServerDefaultAddress     = ":4301"
 	SrcPath                  = "src/"
+	Includes                 = ""
+	Prefix                   = ""
 	TemplateExtension        = ".template"
 	ValidatorExtensionSuffix = "-validator"
 	ZookeeperDefaultAddress  = "127.0.0.1:2181"

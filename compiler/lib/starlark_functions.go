@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/protoconf/protoconf/compiler/starproto"
+	"github.com/abnormal-security/protoconf/compiler/starproto"
 	"github.com/smintz/starlarkobject"
 	"go.starlark.net/starlark"
 	"go.starlark.net/starlarkstruct"

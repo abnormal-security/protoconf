@@ -7,8 +7,8 @@ import (
 	"log/slog"
 	"net"
 
-	protoconfagent "github.com/protoconf/protoconf/agent/api/proto/v1"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
+	protoconfagent "github.com/abnormal-security/protoconf/agent/api/proto/v1"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/test/bufconn"

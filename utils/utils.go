@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
+	"github.com/abnormal-security/protoconf/consts"
 	"io"
 	"io/fs"
 	"log/slog"
@@ -13,9 +14,9 @@ import (
 	"sort"
 	"strings"
 
+	_ "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	_ "github.com/bufbuild/protovalidate-go"
 	_ "github.com/bufbuild/protovalidate-go/legacy"
-	_ "github.com/protoconf/protoconf/pb/protoconf/v1"
 
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/desc/protoparse"
@@ -123,6 +124,9 @@ func (d *DescriptorRegistry) Import(parse ParserFunc, excludes []*regexp.Regexp,
 					skip = true
 				}
 			}
+			if !strings.Contains(f, consts.Includes) {
+				skip = true
+			}
 			if !skip {
 				files = append(files, strings.TrimPrefix(strings.TrimPrefix(f, path), "/"))
 				continue
@@ -137,6 +141,9 @@ func (d *DescriptorRegistry) Import(parse ParserFunc, excludes []*regexp.Regexp,
 		ValidateUnlinkedFiles:           true,
 		InferImportPaths:                true,
 		Accessor: func(filename string) (io.ReadCloser, error) {
+			if consts.Prefix != "" {
+				filename = strings.Replace(filename, consts.Prefix, "", 1)
+			}
 			return os.Open(filename)
 		},
 		LookupImport: func(s string) (*desc.FileDescriptor, error) {
@@ -164,9 +171,10 @@ func (d *DescriptorRegistry) Parse(parser *protoparse.Parser, files []string) er
 	d.localFiles = map[string]struct{}{}
 	descriptors, err := parser.ParseFiles(files...)
 	for _, fd := range descriptors {
+		strippedName := strings.TrimPrefix(fd.GetName(), consts.Prefix)
 		d.MessageRegistry.AddFile("type.googleapis.com", fd)
-		d.FileRegistry[fd.GetName()] = fd
-		d.localFiles[fd.GetName()] = struct{}{}
+		d.FileRegistry[strippedName] = fd
+		d.localFiles[strippedName] = struct{}{}
 	}
 	if err != nil {
 		return errors.Join(errors.New("failed to parse files"), err)

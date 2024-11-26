@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	sprig "github.com/Masterminds/sprig/v3"
-	"github.com/protoconf/protoconf/consts"
+	"github.com/abnormal-security/protoconf/consts"
 )
 
 const DefaultTemplate = `

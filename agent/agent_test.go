@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	protoconf_agent_config "github.com/protoconf/protoconf/agent/config/v1"
-	"github.com/protoconf/protoconf/utils/testdata"
+	protoconf_agent_config "github.com/abnormal-security/protoconf/agent/config/v1"
+	"github.com/abnormal-security/protoconf/utils/testdata"
 )
 
 func TestRunAgent(t *testing.T) {

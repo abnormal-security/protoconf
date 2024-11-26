@@ -6,9 +6,9 @@ import (
 	"flag"
 	"os"
 
+	"github.com/abnormal-security/protoconf/compiler/lib"
 	"github.com/mitchellh/cli"
 	"github.com/protoconf/libprotoconf"
-	"github.com/protoconf/protoconf/compiler/lib"
 )
 
 type modInitCommand struct {

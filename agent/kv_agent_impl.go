@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"path"
 
+	protoconf_agent_config "github.com/abnormal-security/protoconf/agent/config/v1"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
 	"github.com/kvtools/valkeyrie/store"
-	protoconf_agent_config "github.com/protoconf/protoconf/agent/config/v1"
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
 	"go.opentelemetry.io/otel"
 	"google.golang.org/grpc/peer"
 	"google.golang.org/protobuf/proto"

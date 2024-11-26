@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 
-	protoconf_pb "github.com/protoconf/protoconf/pb/protoconf/v1"
-	protoconfmutation "github.com/protoconf/protoconf/server/api/proto/v1"
+	protoconf_pb "github.com/abnormal-security/protoconf/pb/protoconf/v1"
+	protoconfmutation "github.com/abnormal-security/protoconf/server/api/proto/v1"
 	"google.golang.org/protobuf/proto"
 )
 
