@@ -28,15 +28,16 @@ import (
 type cliCommand struct{}
 
 type cliConfig struct {
-	repl             bool
-	verboseLogging   bool
-	processTemplates bool
-	cpuprofile       string
-	memprofile       string
-	compilerAddress  string
-	src              string
-	includes         string
-	prefix           string
+	repl                    bool
+	verboseLogging          bool
+	processTemplates        bool
+	cpuprofile              string
+	memprofile              string
+	compilerAddress         string
+	src                     string
+	includes                string
+	prefix                  string
+	compiledConfigExtension string
 }
 
 func newFlagSet() (*flag.FlagSet, *cliConfig) {
@@ -57,6 +58,7 @@ func newFlagSet() (*flag.FlagSet, *cliConfig) {
 	flags.StringVar(&config.src, "src", "src/", "The root of protoconf src.")
 	flags.StringVar(&config.includes, "includes", "", "files to include in the compilation")
 	flags.StringVar(&config.prefix, "prefix", "", "added prefix for proto import path")
+	flags.StringVar(&config.compiledConfigExtension, "extension", ".materialized_JSON", "extension for compiled config files")
 	return flags, config
 }
 
@@ -84,10 +86,12 @@ func (c *cliCommand) Run(args []string) int {
 	consts.SrcPath = config.src
 	consts.Includes = config.includes
 	consts.Prefix = config.prefix
+	consts.CompiledConfigExtension = config.compiledConfigExtension
 
 	println("abnormal added args: src = ", consts.SrcPath)
 	println("abnormal added args: includes = ", consts.Includes)
 	println("abnormal added args: prefix = ", consts.Prefix)
+	println("abnormal added args: compiled-config-extension = ", consts.CompiledConfigExtension)
 
 	protoconfRoot := strings.TrimSpace(flags.Args()[0])
 	var configs []string

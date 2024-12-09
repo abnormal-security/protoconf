@@ -274,6 +274,19 @@ func (c *Compiler) writeConfig(message *dynamic.Message, filename string) error 
 		return fmt.Errorf("error marshaling ProtoconfValue to JSON, value=%v, err: %v", protoconfValue, err)
 	}
 
+	var data map[string]interface{}
+	err = json.Unmarshal(jsonData, &data)
+	if err != nil {
+		return fmt.Errorf("error marshaling ProtoconfValue JSON to map, value=%v, err: %v", protoconfValue, err)
+	}
+	data = data["value"].(map[string]interface{})
+	delete(data, "@type")
+
+	jsonData, err = json.Marshal(data)
+	if err != nil {
+		return fmt.Errorf("error marshaling ProtoconfValue JSON back to map, value=%v, err: %v", data, err)
+	}
+
 	if err := mkdirAll(filepath.Dir(filename), 0755); err != nil {
 		return fmt.Errorf("error creating output directory %s, err: %s", filepath.Dir(filename), err)
 	}
