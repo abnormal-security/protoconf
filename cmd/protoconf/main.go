@@ -9,6 +9,7 @@ import (
 	"github.com/abnormal-security/protoconf/command"
 	"github.com/abnormal-security/protoconf/compiler"
 	"github.com/abnormal-security/protoconf/devserver"
+	protoconffmt "github.com/abnormal-security/protoconf/fmt"
 	"github.com/abnormal-security/protoconf/inserter"
 	"github.com/abnormal-security/protoconf/mod"
 	"github.com/abnormal-security/protoconf/mutate"
@@ -27,6 +28,7 @@ func main() {
 			"agent":     agent.Command,
 			"compile":   compiler.Command,
 			"devserver": devserver.Command,
+			"fmt":       protoconffmt.Command,
 			"insert":    inserter.Command,
 			"mutate":    mutate.Command,
 			"serve":     server.Command,

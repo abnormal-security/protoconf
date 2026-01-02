@@ -6,7 +6,6 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
-	"github.com/abnormal-security/protoconf/consts"
 	"io"
 	"log/slog"
 	"net/url"
@@ -16,6 +15,8 @@ import (
 	"sort"
 	"strings"
 	"sync"
+
+	"github.com/abnormal-security/protoconf/consts"
 
 	"github.com/abnormal-security/protoconf/command"
 	"github.com/abnormal-security/protoconf/compiler/module/v1"
@@ -63,7 +64,7 @@ func NewModuleService(protoconfRoot string) *ModuleService {
 func (m *ModuleService) getProtoconfPath() string {
 	path, err := filepath.Abs(m.Config.ProtoconfPath)
 	if err != nil {
-		slog.Error("error", err)
+		slog.Error("error getting protoconf path", "error", err)
 		os.Exit(1)
 	}
 	return path
