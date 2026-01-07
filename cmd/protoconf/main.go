@@ -27,6 +27,7 @@ func main() {
 			"agent":     agent.Command,
 			"compile":   compiler.Command,
 			"devserver": devserver.Command,
+			"fmt":       protoconffmt.Command,
 			"insert":    inserter.Command,
 			"mutate":    mutate.Command,
 			"serve":     server.Command,
