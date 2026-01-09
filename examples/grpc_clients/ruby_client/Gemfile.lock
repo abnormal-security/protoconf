@@ -1,25 +1,24 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    google-protobuf (3.25.3)
-    google-protobuf (3.25.3-x86_64-linux)
+    google-protobuf (3.25.5)
     googleapis-common-protos-types (1.14.0)
       google-protobuf (>= 3.18, < 5.a)
-    grpc (1.56.2)
-      google-protobuf (~> 3.23)
-      googleapis-common-protos-types (~> 1.0)
-    grpc (1.56.2-x86_64-linux)
-      google-protobuf (~> 3.23)
+    grpc (1.59.3)
+      google-protobuf (~> 3.25)
       googleapis-common-protos-types (~> 1.0)
     multi_json (1.15.0)
 
 PLATFORMS
   ruby
-  x86_64-linux
 
 DEPENDENCIES
-  grpc (~> 1.56.0)
-  multi_json (~> 1.15.0)
+  google-protobuf (~> 3.25, >= 3.25.5)
+  grpc (~> 1.59)
+  multi_json (~> 1.15)
+
+RUBY VERSION
+   ruby 2.7.0p0
 
 BUNDLED WITH
-   2.4.22
+   2.4.0
